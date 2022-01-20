@@ -2,7 +2,7 @@
 
 
 // You can also log multiple values at once like this
-console.log(playerInfo.name, playerInfo.attack, playerInfo.health);
+//console.log(playerInfo.name, playerInfo.attack, playerInfo.health);
 
 
 var fight = function(enemy) {
@@ -64,6 +64,7 @@ var fight = function(enemy) {
   }
 }; 
 
+// randomNumber function
 var randomNumber = function(min, max) {
   var value = Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -71,7 +72,7 @@ var randomNumber = function(min, max) {
 }
 
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
@@ -116,6 +117,16 @@ var enemyInfo = [
     attack: randomNumber(10, 14)
   }
 ];
+
+// function to set name
+var getPlayerName = function() {
+  var name = "";
+  while (name === "" || name === null){
+    name = prompt("What is your robot;s name?");
+  }
+  console.log("Your robot's name is " + name);
+  return name;
+};
 
 // function to start new game 
 var startGame = function() {
@@ -211,6 +222,8 @@ var shop = function() {
 
 
 fight();
+getPlayerName();
+randomNumber();
 startGame();
 endGame();
-randomNumber();
+shop();
